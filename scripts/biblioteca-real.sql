@@ -21,7 +21,7 @@ CREATE TABLE `Generos` (
 
 CREATE TABLE `Editoras` (
   `id_editora` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `empresa` varchar(255),
+  `empresa` varchar(100),
   `cnpj` int,
   `tel` int,
   `email` varchar(255)
@@ -52,39 +52,4 @@ CREATE TABLE `Funcionarios` (
   `data_adm` varchar(255),
   `id_pessoa_fk` int,
   FOREIGN KEY (id_pessoa_fk) REFERENCES Pessoas(id_pessoa) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
-CREATE TABLE `Autores` (
-  `id_autor` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `qtd_livros` int,
-   `id_pessoa_fk` int,
-  FOREIGN KEY (id_pessoa_fk) REFERENCES Pessoas(id_pessoa) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
-CREATE TABLE `Livros` (
-  `id_livro` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(255),
-  `ano` date,
-  `edicao` varchar(255),
-  `editora` varchar(255),
-  `isbn` int,
-  `disponibilidade` boolean,
-  `id_genero_fk` int,
-  `id_autor_fk` int,
-  `id_editora_fk` int,
-  FOREIGN KEY (id_genero_fk) REFERENCES Generos(id_genero) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_autor_fk) REFERENCES Autores(id_autor) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_editora_fk) REFERENCES Editoras(id_editora) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
-CREATE TABLE `Emprestimos` (
-  `id_emprestimo` int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `data_emprestimo` timestamp,
-  `data_devolucao` date,
-  `id_livro_fk` int,
-  `id_usuario_fk` int,
-  `id_funcionario_fk` int,
-  FOREIGN KEY (id_livro_fk) REFERENCES Livros(id_livro) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_usuario_fk) REFERENCES Usuarios(id_usuario) ON UPDATE CASCADE ON DELETE CASCADE,
-  FOREIGN KEY (id_funcionario_fk) REFERENCES Funcionarios(id_funcionario) ON UPDATE CASCADE ON DELETE CASCADE
 );
