@@ -39,3 +39,73 @@ INSERT INTO BIBLIOTECA.editoras(empresa, cnpj, tel, email)
     ('allbook', '313704790', '96687655', 'allbookeditora@allbook.com.br');
     
 SELECT * FROM editoras;
+
+INSERT INTO BIBLIOTECA.Pessoas(nome, email, cpf, telefone, data_nasc)
+	VALUES
+    ('Lucas Silva de Castro', 'lukinha@balatensa.com.br', '12345678910', '41996687651', '2009-08-01'),
+    ('Evan Thomas Peters', 'tatelangdon@ahs.com.br', '11121314151', '41996686661', '1987-01-20'),
+    ('Min Yoon-gi', 'suga@agustd.com.br', '61718192021', '41896697654', '1993-03-09'),
+    ('Janna a Fúria da Tormenta', 'janna@dolol.com.br', '3332425262', '41209199170', '2009-09-02'),
+    ('Lulu a Fada Feiticeira', 'lulu@dolol.com.br', '22232445262', '41933199170', '2012-03-20'),
+    ('Lux a Dama da Luz', 'lux@dolol.com.br', '11132425262', '41599199170', '2010-10-19'),
+    ('Morganaa Caídas', 'morgana@dolol.com.br', '22232425266', '41999199171', '2009-02-21'),
+    ('Nami a Conjuradora das Marés', 'nami@dolol.com.br', '22232425272', '41999199172', '2012-12-07'),
+    ('Riven a Exilada', 'riven@dolol.com.br', '22232815262', '41999199173', '2011-09-14'),
+    ('Soraka a Filha das Estrelas', 'soraka@dolol.com.br', '22232425123', '41999199174', '2009-02-21'),
+    ('Sona a Mestra das Cordas', 'sona@dolol.com.br', '22232425554', '41999199175', '2010-09-21'),
+    ('Teemo o Explorador Veloz', 'teemo@dolol.com.br', '22232425112', '41999199176', '2009-02-21'),
+    ('Vi a Defensora de Piltover', 'vi@dolol.com.br', '22232425444', '41999199177', '2012-12-19'),
+    ('Yuumi de Bandópolis', 'yuumi@gatamagica.com.br', '22232425262', '41999199170', '2019-05-01'),
+    ('Leona de Monte Targon', 'leona@amadiana.com.br', '72829303132', '41886689651', '2011-07-13');
+    
+SELECT * FROM pessoas;
+
+INSERT INTO BIBLIOTECA.Usuarios(senha, id_pessoa_fk)
+	VALUES
+    ('BR12345678', '1'),
+    ('EUA12345678', '2'),
+	('KR12345678', '3'),
+    ('LOL12345678', '4'),
+    ('MAIN12345678', '5');
+    
+SELECT * FROM usuarios;
+
+INSERT INTO BIBLIOTECA.Funcionarios(cargo, senha, data_adm, id_pessoa_fk)
+	VALUES
+    ('bibliotecario', 'BI12345678', '1995-02-20', '6'),
+    ('auxiliar de biblioteca', 'AUX12345678', '1995-02-21', '7'),
+    ('auxiliar administrativo', 'ADM12345678', '1995-02-22', '8'),
+    ('recepcionista', 'REC12345678', '1995-02-23', '9'),
+    ('estoquista', 'EST12345678', '1995-02-24', '10');
+    
+SELECT * FROM funcionarios;
+
+INSERT INTO BIBLIOTECA.Autores(qtd_livros, id_pessoa_fk)
+	VALUES
+    ('23', '11'),
+    ('24', '12'),
+    ('25', '13'),
+    ('26', '14'),
+    ('26', '15');
+    
+SELECT * FROM autores;
+
+INSERT INTO BIBLIOTECA.Livros(titulo, ano, edicao, editora, isbn, disponibilidade, id_genero_fk, id_autor_fk, id_editora_fk)
+	VALUES
+    ('As Crônicas de Nárnia', '2023-03-01', '01', 'editora Moderna', '65600501', '0', '1', '1', '1'),
+    ('Harry Potter e o Prisioneiro de Azkaban', '2004-01-3', '02', 'editora Globo', '85325310', '1', '2', '2', '2'),
+    ('As aventuras de Sherlock Holmes', '2019-08-03', '03', 'editora Garamond', '65600501', '0', '3', '3', '3'),
+    ('Grimório das Bruxas', '2021-05-05', '04', 'editora Gaivota', '978655598', '1', '4', '4', '4'),
+    ('Violet Bent Backwards Over the Grass', '2020-11-10', '05', 'editora Allbook', '19821672', '0', '5', '5', '5');
+    
+SELECT * FROM livros;
+
+INSERT INTO BIBLIOTECA.Emprestimos(data_emprestimo, data_devolucao, id_livro_fk, id_usuario_fk, id_funcionario_fk)
+	VALUES
+    ('2023-01-12', '2023-03-12','1', '1', '1'),
+	('2023-02-23', '2023-04-23','2', '2', '2'),
+    ('2023-03-11', '2023-05-11', '3','3', '1'),
+    ('2023-04-08', '2023-06-08','4', '4', '2'),
+    ('2023-06-01', '2023-08-01', '5', '5', '1');
+    
+SELECT * FROM emprestimos;
