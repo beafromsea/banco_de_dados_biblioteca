@@ -1,9 +1,9 @@
-# Banco de Dados Biblioteca
-## Introdução: 
+# 📊Banco de Dados Biblioteca
+## 🔍Introdução: 
 Este repositório contém um banco de dados modelado para atender às necessidades de uma biblioteca. O objetivo principal é gerenciar o fluxo de empréstimo de livros, criando um sistema de entidades e relacionamentos estruturado para mapear todas as etapas do processo, desde a aquisição dos exemplares até a retirada pelos frequentantes.
 
 
-## Requisitos:
+## 📝Requisitos:
 Antes de executar o banco de dados localmente, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
 ```
@@ -15,7 +15,7 @@ A ordem correta para o funcionamento é:
 * <a href="./scripts/biblioteca-real.sql">biblioteca-real</a>
 * <a href="./scripts/insercoes-de-arquivos.sql">insercoes-de-arquivos</a>
 
-## Estrutura do Banco de Dados:
+## 🗺️Estrutura do Banco de Dados:
 O banco de dados da biblioteca é composto pelas seguintes tabelas:
 
 <h3>Livros:</h3> Contém informações sobre os livros presentes na biblioteca, como título, autor, gênero, ISBN, entre outros.
